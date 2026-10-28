@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Addon Hub for Blender</title>
+<meta name="description" content="Addon Hub for Blender: search, open, enable, disable, group and uninstall every add-on from one place, and clean up the cluttered N panel. 100% offline.">
+<meta property="og:title" content="Addon Hub for Blender">
+<meta property="og:description" content="All your add-ons. One place. Search them with Ctrl+Alt+N and clean up your N panel.">
+<meta property="og:image" content="images/cover.jpg">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.hero { padding: 48px 0 40px; background: radial-gradient(ellipse 80% 70% at 50% 0%, #1b2943 0%, var(--bg) 70%); }
+.hero .brand { margin-bottom: 24px; }
+.tagline { font-size: clamp(30px, 4.6vw, 50px); font-weight: 800; letter-spacing: -.035em; line-height: 1.08; margin: 0 0 18px; }
+.lead { font-size: clamp(18px, 2.2vw, 21px); color: #d0d7e6; max-width: 780px; margin-bottom: 22px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.chip { padding: 7px 16px; border-radius: 999px; background: rgba(77,143,250,.1); border: 1px solid rgba(77,143,250,.38); color: #d3e2fb; font-weight: 600; font-size: 15px; }
+.keys { display: inline-flex; align-items: center; gap: 8px; font-size: 20px; }
+.keys kbd { font-size: 18px; padding: 4px 12px; }
+.modes .card { padding: 20px; }
+.modes .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent2); margin-bottom: 6px; }
+.big-num { display: flex; align-items: baseline; gap: 14px; margin: 6px 0 16px; font-weight: 800; letter-spacing: -.03em; }
+.big-num .from { font-size: 44px; color: var(--bad); }
+.big-num .to { font-size: 58px; color: var(--accent); }
+.big-num .arrow { font-size: 30px; color: var(--muted); }
+.spec .card { text-align: center; padding: 20px 14px; }
+.spec b { display: block; font-size: 19px; margin-bottom: 4px; }
+.cta { text-align: center; }
+.cta .keys { margin: 8px 0 18px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img class="logo" src="images/logo.svg" alt=""><h1>Addon Hub</h1></div>
+    <p class="tagline">All your add-ons. <span class="grad">One place.</span></p>
+    <p class="lead">Too many add-ons, too many tabs in the N panel? Addon Hub puts every add-on in one searchable launcher and one tidy sidebar tab. Find it, open it, switch it off or uninstall it in a few keystrokes.</p>
+    <div class="chips">
+      <span class="chip">GPU launcher · Ctrl+Alt+N</span>
+      <span class="chip">Declutter the N panel</span>
+      <span class="chip">Favorites &amp; groups</span>
+      <span class="chip">Enable · disable · uninstall</span>
+      <span class="chip">100% offline</span>
+    </div>
+    <div class="media">
+      <video src="media/promo.mp4" poster="images/cover.jpg" controls playsinline preload="none"></video>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div class="txt">
+      <div class="kicker">The launcher</div>
+      <h2>One shortcut. <span class="grad">Every add-on.</span></h2>
+      <p>Press <span class="keys"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd></span> in the 3D Viewport and a custom GPU-drawn launcher opens right over your scene. Start typing, pick a tile, press <kbd>Enter</kbd>: the sidebar opens on that add-on.</p>
+      <ul class="ticks">
+        <li>Instant search by name, category or group</li>
+        <li>Mouse or keyboard: arrows, <kbd>Tab</kbd> for filters, <kbd>Enter</kbd> to open</li>
+        <li>Star favorites, switch add-ons on or off right on the tile</li>
+        <li>Your own colors and opacity, your own hotkey</li>
+      </ul>
+    </div>
+    <div class="media"><video src="media/launcher.mp4" poster="images/launcher.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Declutter</div>
+    <h2>Your N panel, <span class="grad">back in order</span></h2>
+    <div class="split" style="margin-top:22px">
+      <div class="txt">
+        <div class="big-num"><span class="from">30</span><span class="arrow">&#10140;</span><span class="to">5</span><span class="muted" style="font-size:20px;font-weight:600">tabs</span></div>
+        <p>One click on <b>Send all to Hub</b> takes every add-on out of the tab bar and puts it inside a single <b>Addon Hub</b> tab. Click an add-on there and its own panels appear right below, exactly as they were.</p>
+        <p>Changed your mind? <b>Restore all</b> brings every tab back. Disabling Addon Hub restores everything too.</p>
+      </div>
+      <div class="media"><video src="media/declutter.mp4" poster="images/before_after.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+    </div>
+    <div class="grid2" style="margin-top:22px">
+      <div class="media"><img src="images/before_after.jpg" alt="Before: 30 sidebar tabs. After: 5 tabs." loading="lazy"></div>
+      <div class="media"><img src="images/sidebar_hub.jpg" alt="The Addon Hub tab with Rig Helper selected and its panels below" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Sidebar modes</div>
+    <h2>You decide where <span class="grad">each add-on lives</span></h2>
+    <p>Pick a mode per add-on, per group, or for all of them at once.</p>
+    <div class="grid4 modes" style="margin-top:22px">
+      <div class="card"><span class="tag">Own tab</span><h3>As before</h3><p>The add-on keeps its own tab. Nothing changes.</p></div>
+      <div class="card"><span class="tag">Hub</span><h3>Inside the Hub</h3><p>No tab of its own. Pick it in the Addon Hub tab when you need it.</p></div>
+      <div class="card"><span class="tag">Custom tab</span><h3>Merged</h3><p>Put several add-ons together in one tab you name, like "Modeling".</p></div>
+      <div class="card"><span class="tag">Hidden</span><h3>Out of sight</h3><p>Keep the add-on enabled but hide its sidebar panels.</p></div>
+    </div>
+    <div class="media" style="margin-top:22px"><video src="media/sidebar_modes.mp4" autoplay muted loop playsinline preload="metadata"></video></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split rev">
+    <div class="txt">
+      <div class="kicker">Organize</div>
+      <h2>Favorites and <span class="grad">color groups</span></h2>
+      <p>Star the add-ons you use every day: they come first in the launcher and the Hub tab. Put the rest into color-coded groups such as Modeling, Rigging or Lighting.</p>
+      <ul class="ticks">
+        <li>Filter the launcher by group with one click (or <kbd>Tab</kbd>)</li>
+        <li><b>Group to Hub</b>, <b>Group as tab</b> or <b>Restore group</b> in one click</li>
+        <li>Settings are saved and come back every time Blender starts</li>
+      </ul>
+    </div>
+    <div class="media"><video src="media/organize.mp4" poster="images/launcher_favorites.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="txt">
+      <div class="kicker">Manage</div>
+      <h2>Enable, disable, <span class="grad">uninstall</span></h2>
+      <p>Every installed add-on and extension in one list: switch it on or off, open its preferences, see its original tab, or delete it from disk with a confirmation.</p>
+      <ul class="ticks">
+        <li>Filter by All, Enabled or Disabled, search by name</li>
+        <li>Works for legacy add-ons and Blender 4.2+ extensions</li>
+        <li>Blender's own add-ons are protected from uninstalling</li>
+      </ul>
+    </div>
+    <div class="media"><video src="media/manage.mp4" poster="images/uninstall_confirm.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Features</div>
+    <h2>Small add-on, <span class="grad">big cleanup</span></h2>
+    <div class="grid3" style="margin-top:24px">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></div><h3>GPU-drawn launcher</h3><p>A fast custom overlay in the viewport. Keys you type never reach your scene.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11v14H4z"/><path d="M15 7h4v5h-4"/></svg></div><h3>One sidebar tab</h3><p>Every add-on you send to the Hub lives in one tab, opened on demand.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.1l6-.8z"/></svg></div><h3>Favorites</h3><p>Ctrl+click or right-click any tile. Favorites always come first.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.2v9.6L12 21l-8-4.2V7.2z"/><path d="M4 7.2l8 4.3 8-4.3"/><path d="M12 11.5V21"/></svg></div><h3>Color groups</h3><p>Your own groups, with bulk actions for the whole group.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5h10.2a4.3 4.3 0 0 0 .6-8.6A6 6 0 0 0 6.4 8.6 4.9 4.9 0 0 0 7 18.5z"/><path d="M3.5 3.5l17 17"/></svg></div><h3>100% offline</h3><p>No internet, no account, no tracking. Nothing to install besides the zip.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M3.4 12h17.2"/><path d="M12 3.4c2.4 2.4 3.6 5.3 3.6 8.6s-1.2 6.2-3.6 8.6c-2.4-2.4-3.6-5.3-3.6-8.6S9.6 5.8 12 3.4z"/></svg></div><h3>English &amp; Türkçe</h3><p>Switch the interface language in the add-on preferences.</p></div>
+    </div>
+    <div class="media" style="margin-top:24px"><img src="images/prefs_manage.jpg" alt="Manage page in the add-on preferences" loading="lazy"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Compatibility</div>
+    <h2>Runs where <span class="grad">you</span> run Blender</h2>
+    <div class="grid4 spec" style="margin-top:22px">
+      <div class="card"><b>Blender 4.2+</b><span class="muted">tested on 4.5 LTS and 5.2</span></div>
+      <div class="card"><b>Windows · macOS · Linux</b><span class="muted">pure Python, one zip</span></div>
+      <div class="card"><b>No network</b><span class="muted">works fully offline</span></div>
+      <div class="card"><b>Safe</b><span class="muted">disable it and every tab comes back</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Stop hunting for tabs.</h2>
+    <div class="keys"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd></div>
+    <p>Read the <a href="docs.html">documentation</a> for every feature and setting.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><a href="docs.html">Documentation</a> · Addon Hub for Blender · GPL-3.0-or-later</div>
+</footer>
+
+<script src="assets/embed.js"></script>
+</body>
+</html>

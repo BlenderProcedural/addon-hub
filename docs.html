@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Addon Hub Docs</title>
+<meta name="description" content="Documentation for the Addon Hub Blender add-on: installation, the Ctrl+Alt+N launcher, sidebar modes, the Hub tab, managing and uninstalling add-ons, groups, preferences and troubleshooting.">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+body { font-size: 16.5px; line-height: 1.65; }
+.wrap { max-width: 960px; }
+header { padding: 40px 0 30px; background: radial-gradient(ellipse 80% 90% at 50% 0%, #1b2943 0%, var(--bg) 75%); }
+.brand .logo { width: 50px; height: 50px; }
+.brand h1 { font-size: clamp(28px, 4.5vw, 42px); line-height: 1.1; }
+.brand small { display: block; font-size: 15px; color: var(--muted); font-weight: 400; letter-spacing: 0; margin-top: 4px; }
+section { padding: 34px 0; }
+h2 { font-size: 28px; }
+h2 .n { color: var(--accent); margin-right: 8px; }
+h3 { font-size: 19px; margin: 24px 0 8px; }
+p { margin: 0 0 12px; }
+ol, ul { margin: 0 0 12px; padding-left: 22px; color: var(--soft); }
+li { margin-bottom: 6px; }
+.toc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 22px; margin-top: 26px; padding: 18px 22px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+.toc a { color: #cfd6e4; text-decoration: none; font-size: 15px; }
+.toc a:hover { color: var(--accent2); }
+.toc a span { color: var(--accent); margin-right: 6px; font-weight: 700; }
+.tbl-wrap { overflow-x: auto; margin: 14px 0 16px; border: 1px solid var(--line); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--soft); }
+tr:last-child td { border-bottom: 0; }
+th { background: #141b29; color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .8px; }
+td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+.note { background: rgba(77,143,250,.08); border: 1px solid rgba(77,143,250,.32); border-radius: 12px; padding: 12px 16px; margin: 14px 0; color: #d3e0f6; }
+.warn { background: rgba(242,184,75,.07); border-color: rgba(242,184,75,.35); color: #f1e3bf; }
+.shot { border-radius: 12px; border: 1px solid var(--line); margin: 16px 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.two > * { min-width: 0; }
+.two .shot { margin: 0; }
+details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin-bottom: 10px; }
+summary { cursor: pointer; font-weight: 600; color: var(--text); }
+details p, details ul { margin: 10px 0 2px; }
+footer { padding: 28px 0 44px; }
+@media (max-width: 760px) {
+  .toc { grid-template-columns: 1fr 1fr; }
+  .two { grid-template-columns: 1fr; }
+  td:first-child { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><img class="logo" src="images/logo.svg" alt=""><h1>Addon Hub <span class="grad">Docs</span><small>Version 0.1 · Blender 4.2 and newer</small></h1></div>
+    <nav class="toc">
+      <a href="#install"><span>1</span>Installation</a>
+      <a href="#quick"><span>2</span>Quick start</a>
+      <a href="#where"><span>3</span>Where to find it</a>
+      <a href="#launcher"><span>4</span>The launcher</a>
+      <a href="#modes"><span>5</span>Sidebar modes</a>
+      <a href="#hubtab"><span>6</span>The Addon Hub tab</a>
+      <a href="#manage"><span>7</span>Manage add-ons</a>
+      <a href="#groups"><span>8</span>Favorites and groups</a>
+      <a href="#prefs"><span>9</span>Preferences</a>
+      <a href="#saving"><span>10</span>Saving and restoring</a>
+      <a href="#faq"><span>11</span>Troubleshooting</a>
+      <a href="#req"><span>12</span>Requirements</a>
+    </nav>
+  </div>
+</header>
+
+<section id="install">
+  <div class="wrap">
+    <h2><span class="n">1</span>Installation</h2>
+    <p>Addon Hub is a Blender extension. You get one <code>.zip</code> file that works on every platform. Do not unzip it.</p>
+    <ol>
+      <li>Open Blender 4.2 or newer.</li>
+      <li>Drag and drop the <code>.zip</code> onto the Blender window, or go to <b>Edit › Preferences › Get Extensions</b>, open the <b>▾</b> menu in the top right and choose <b>Install from Disk…</b></li>
+      <li>Make sure <b>Addon Hub</b> is enabled in the list.</li>
+      <li>Press <kbd>N</kbd> in the 3D Viewport: you will see a new <b>Addon Hub</b> tab. Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd> to open the launcher.</li>
+    </ol>
+    <h3>Updating</h3>
+    <p>Install the new <code>.zip</code> the same way. Blender replaces the old version and your favorites, groups and sidebar modes are kept.</p>
+  </div>
+</section>
+
+<section id="quick">
+  <div class="wrap">
+    <h2><span class="n">2</span>Quick start</h2>
+    <ol>
+      <li>Open the <b>Addon Hub</b> tab in the sidebar (<kbd>N</kbd>).</li>
+      <li>Click <b>Send all to Hub</b> and confirm with <b>Apply</b>. Every add-on with sidebar panels leaves the tab bar.</li>
+      <li>Click an add-on in the Hub tab: its panels appear right below. Click it again to hide them.</li>
+      <li>Anywhere in the 3D Viewport, press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd>, type a few letters and press <kbd>Enter</kbd> to jump to an add-on.</li>
+    </ol>
+    <p>Want your tabs back? Open <b>Manage</b> at the bottom of the Hub tab and click <b>Restore all</b>.</p>
+    <div class="two">
+      <img class="shot" src="images/sidebar_send_all.jpg" alt="Empty Hub tab with the Send all to Hub button" loading="lazy">
+      <img class="shot" src="images/sidebar_hub.jpg" alt="Hub tab with Rig Helper selected" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="where">
+  <div class="wrap">
+    <h2><span class="n">3</span>Where to find it</h2>
+    <div class="tbl-wrap"><table>
+      <tr><th>Place</th><th>What is there</th></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd> in the 3D Viewport</td><td>The launcher: search, open, favorite and enable/disable any add-on.</td></tr>
+      <tr><td>3D Viewport › Sidebar › Addon Hub</td><td>The <b>Add-ons</b> panel with search, filters and the add-ons you sent to the Hub; below it the collapsed <b>Manage</b> panel with its <b>Groups</b> sub-panel.</td></tr>
+      <tr><td>Edit › Preferences › Add-ons › Addon Hub</td><td>Three pages: <b>General</b> (language, launcher look, hotkey), <b>Manage</b> and <b>Groups</b>, with more room than the sidebar.</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section id="launcher">
+  <div class="wrap">
+    <h2><span class="n">4</span>The launcher</h2>
+    <p>The launcher is drawn by Addon Hub itself on top of the 3D Viewport. It shows every installed add-on as a tile: a colored badge with its initials, the name, its group or category and its sidebar mode, a favorite star and an on/off switch. Disabled add-ons are shown dimmed.</p>
+    <img class="shot" src="images/launcher.jpg" alt="The Addon Hub launcher" loading="lazy">
+    <h3>Mouse</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Action</th><th>Result</th></tr>
+      <tr><td>Click a tile</td><td>Opens the add-on (see below) and closes the launcher.</td></tr>
+      <tr><td>Click the star, <kbd>Ctrl</kbd>+click or right-click a tile</td><td>Adds or removes the favorite.</td></tr>
+      <tr><td>Click the switch</td><td>Enables or disables the add-on.</td></tr>
+      <tr><td>Click a chip</td><td>Filters by <b>All</b>, <b>Favorites</b> or one of your groups.</td></tr>
+      <tr><td>Mouse wheel</td><td>Scrolls the tiles. Outside the launcher, the wheel still zooms the viewport.</td></tr>
+      <tr><td>Click outside, or the ×</td><td>Closes the launcher.</td></tr>
+    </table></div>
+    <h3>Keyboard</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Key</th><th>Result</th></tr>
+      <tr><td>Any letter or number</td><td>Types into the search. Search matches the name, category, module and group, and every word must match.</td></tr>
+      <tr><td><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></td><td>Moves the selection between tiles.</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Opens the selected add-on.</td></tr>
+      <tr><td><kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd></td><td>Next / previous filter chip.</td></tr>
+      <tr><td><kbd>Backspace</kbd> / <kbd>Ctrl</kbd>+<kbd>Backspace</kbd></td><td>Deletes one character / clears the search.</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>V</kbd></td><td>Pastes into the search.</td></tr>
+      <tr><td><kbd>Esc</kbd> or <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd></td><td>Closes the launcher.</td></tr>
+    </table></div>
+    <div class="note">While the launcher is open, keys you press go only to the launcher. Typing <kbd>X</kbd> or <kbd>Delete</kbd> will never delete anything in your scene.</div>
+    <h3>What "open" does</h3>
+    <ul>
+      <li>The sidebar is shown and switched to the add-on's tab: its own tab, its custom tab, or the Addon Hub tab with the add-on selected.</li>
+      <li>Add-ons without sidebar panels (exporters, for example) open their page in the Preferences instead.</li>
+      <li>A disabled add-on is not opened: use the switch on its tile first. A <b>Hidden</b> add-on is not opened either; change its mode in Manage.</li>
+    </ul>
+    <div class="two">
+      <img class="shot" src="images/launcher_search.jpg" alt="Launcher filtered by typing rig" loading="lazy">
+      <img class="shot" src="images/launcher_group.jpg" alt="Launcher filtered by a group" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="modes">
+  <div class="wrap">
+    <h2><span class="n">5</span>Sidebar modes</h2>
+    <p>Each add-on with sidebar panels has a <b>sidebar mode</b>. It decides where its panels appear in the 3D Viewport's sidebar.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Mode</th><th>What happens</th></tr>
+      <tr><td>Own tab <span class="muted">(default)</span></td><td>The add-on keeps its original tab, exactly as without Addon Hub.</td></tr>
+      <tr><td>Hub</td><td>The add-on's tab disappears. Its panels show up inside the <b>Addon Hub</b> tab when you select it there or open it from the launcher.</td></tr>
+      <tr><td>Custom tab</td><td>The add-on's panels move to a tab with a name you choose. Several add-ons can share one custom tab. Pick <b>New custom tab…</b> to create one.</td></tr>
+      <tr><td>Hidden</td><td>The add-on stays enabled, but its sidebar panels are not shown. Useful for add-ons you only use through menus or shortcuts.</td></tr>
+    </table></div>
+    <p>Change the mode of one add-on with the mode button in its row in <b>Manage</b>, or for many at once with <b>All to Hub</b> / <b>Restore all</b> and the group buttons.</p>
+    <div class="note">Modes only change the <b>3D Viewport sidebar</b>. Menus, shortcuts, popovers and the add-on's own features keep working the same in every mode.</div>
+  </div>
+</section>
+
+<section id="hubtab">
+  <div class="wrap">
+    <h2><span class="n">6</span>The Addon Hub tab</h2>
+    <p>The <b>Add-ons</b> panel at the top of the tab lists the add-ons in <b>Hub</b> mode: favorites first, then each group, then the rest under <b>Other</b>.</p>
+    <ul>
+      <li><b>Search field</b>: filters the list as you type.</li>
+      <li><b>Launcher button</b> opens the launcher, <b>Refresh</b> rescans your installed add-ons.</li>
+      <li><b>Star</b> shows only favorites, the <b>group menu</b> shows only one group.</li>
+      <li>Click an add-on to show its panels below the list. The selected add-on gets a small header with a <b>Preferences</b> button and an <b>×</b> to close it.</li>
+    </ul>
+    <p>When an add-on is open in the Hub, the Manage panel is hidden so the add-on's own panels stay at the top. Close the add-on (×) to see Manage again.</p>
+    <img class="shot" src="images/sidebar_opened.jpg" alt="Sidebar after opening an add-on from the launcher" loading="lazy" style="max-width:490px">
+  </div>
+</section>
+
+<section id="manage">
+  <div class="wrap">
+    <h2><span class="n">7</span>Manage add-ons</h2>
+    <p><b>Manage</b> lists every installed add-on and extension. It is at the bottom of the Addon Hub tab and, larger, in <b>Edit › Preferences › Add-ons › Addon Hub › Manage</b>.</p>
+    <h3>Each row</h3>
+    <p>Enabled checkbox, favorite star, group color, name, sidebar mode button and a trash button to uninstall. Filter the list with <b>All</b>, <b>Enabled</b> and <b>Disabled</b>.</p>
+    <h3>Details of the selected add-on</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Item</th><th>What it does</th></tr>
+      <tr><td>Version, category</td><td>From the add-on itself.</td></tr>
+      <tr><td>Enabled</td><td>Turns the add-on on or off.</td></tr>
+      <tr><td>Favorite</td><td>Adds or removes the star.</td></tr>
+      <tr><td>Group</td><td>Puts the add-on into a group, or creates a new group for it.</td></tr>
+      <tr><td>Sidebar</td><td>The sidebar mode (see section 5).</td></tr>
+      <tr><td>Original tab</td><td>The tab name the add-on uses by itself.</td></tr>
+      <tr><td>Open</td><td>Same as opening it from the launcher.</td></tr>
+      <tr><td>Preferences</td><td>Jumps to the add-on's page in Blender's Preferences.</td></tr>
+      <tr><td>Uninstall</td><td>Deletes the add-on from disk after a confirmation.</td></tr>
+    </table></div>
+    <p>At the bottom: <b>All to Hub</b> sends every add-on with sidebar panels to the Hub; <b>Restore all</b> puts every add-on back into its own tab.</p>
+    <img class="shot" src="images/prefs_manage.jpg" alt="Manage page in the preferences" loading="lazy">
+    <div class="note warn"><b>Uninstall cannot be undone.</b> The add-on's files are deleted from disk. Add-ons that ship with Blender cannot be uninstalled. Addon Hub does not list itself, so you cannot switch it off by accident.</div>
+    <img class="shot" src="images/uninstall_confirm.jpg" alt="Uninstall confirmation" loading="lazy" style="max-width:652px">
+    <h3>Saving enable/disable changes</h3>
+    <p>Enabling and disabling add-ons is stored in Blender's own preferences. If <b>Auto-Save Preferences</b> is off in your Blender, Manage shows a <b>Save Preferences</b> button when there are unsaved changes.</p>
+  </div>
+</section>
+
+<section id="groups">
+  <div class="wrap">
+    <h2><span class="n">8</span>Favorites and groups</h2>
+    <h3>Favorites</h3>
+    <p>Star an add-on in the launcher (click the star, <kbd>Ctrl</kbd>+click or right-click the tile) or in Manage. Favorites come first in the launcher and in the Hub tab, and the <b>Favorites</b> chip shows only them.</p>
+    <h3>Groups</h3>
+    <p>Open <b>Manage › Groups</b> (or the Groups page in the preferences).</p>
+    <ul>
+      <li><b>+</b> creates a group with a name and a color. <b>−</b> removes the selected group; its add-ons stay installed, just ungrouped. The pencil renames or recolors it.</li>
+      <li>Assign add-ons with the <b>Group</b> menu in Manage.</li>
+      <li>Every group becomes a chip in the launcher and a section in the Hub tab.</li>
+    </ul>
+    <div class="tbl-wrap"><table>
+      <tr><th>Button</th><th>What it does</th></tr>
+      <tr><td>Group to Hub</td><td>Sends the group's add-ons to the Hub tab.</td></tr>
+      <tr><td>Group as tab</td><td>Merges the group's add-ons into one custom tab named after the group.</td></tr>
+      <tr><td>Restore group</td><td>Puts the group's add-ons back into their own tabs.</td></tr>
+    </table></div>
+    <img class="shot" src="images/prefs_groups.jpg" alt="Groups page" loading="lazy">
+  </div>
+</section>
+
+<section id="prefs">
+  <div class="wrap">
+    <h2><span class="n">9</span>Preferences</h2>
+    <p><b>Edit › Preferences › Add-ons › Addon Hub › General</b>:</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Setting</th><th>Default</th><th>What it does</th></tr>
+      <tr><td>Language</td><td>English</td><td>Interface language of Addon Hub: English or Türkçe.</td></tr>
+      <tr><td>Accent color</td><td>Blue</td><td>Color of the launcher's highlights, active chip and switches.</td></tr>
+      <tr><td>Background</td><td>Dark grey</td><td>Background color of the launcher.</td></tr>
+      <tr><td>Opacity</td><td>0.96</td><td>Launcher opacity, 0.5 to 1.0.</td></tr>
+      <tr><td>Hotkey</td><td><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>N</kbd></td><td>Change the launcher shortcut right here. It works in the 3D Viewport.</td></tr>
+      <tr><td>Settings file</td><td></td><td>Shows where your favorites, groups and modes are saved.</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section id="saving">
+  <div class="wrap">
+    <h2><span class="n">10</span>Saving and restoring</h2>
+    <ul>
+      <li>Favorites, groups and sidebar modes are saved automatically in a small settings file inside Addon Hub's own extension folder. They are not stored in your .blend files, so they are the same in every project.</li>
+      <li>They are applied again when Blender starts, when you load a file and when add-ons are enabled from anywhere.</li>
+      <li>Hub actions are not part of Blender's undo history, so <kbd>Ctrl</kbd>+<kbd>Z</kbd> does not revert them. Use <b>Restore all</b> or change the mode again.</li>
+      <li><b>Disabling Addon Hub</b> puts every add-on's panels back into their original tabs. Your settings stay saved for the next time you enable it.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2><span class="n">11</span>Troubleshooting</h2>
+    <details><summary>Ctrl+Alt+N does nothing</summary>
+      <p>The mouse must be over a 3D Viewport. Check the <b>Hotkey</b> in the General page of the preferences; another add-on may use the same shortcut, so pick a different one there. You can also open the launcher with the button in the Addon Hub tab.</p></details>
+    <details><summary>An add-on I opened shows no panels</summary>
+      <p>Many add-ons show their panels only in a certain mode or with a certain object selected (for example Edit Mode, or an armature). Addon Hub switches to the right tab, but the add-on's own rules decide whether its panels show.</p></details>
+    <details><summary>An add-on is not in the Hub tab</summary>
+      <p>Only add-ons in <b>Hub</b> mode are listed there. Check its mode in Manage, and clear the search, the favorites star and the group filter at the top of the tab.</p></details>
+    <details><summary>A newly installed add-on is missing from the list</summary>
+      <p>Click <b>Refresh</b> in the Addon Hub tab. The list also refreshes on its own when add-ons are enabled.</p></details>
+    <details><summary>Panels changed order or opened/closed state</summary>
+      <p>When a panel moves to another tab, Blender puts it at the end of that tab and resets whether it is expanded. This can also happen after <b>Restore</b> in tabs that several add-ons share. Nothing else changes.</p></details>
+    <details><summary>I want everything back to normal</summary>
+      <p>Click <b>Restore all</b> in Manage, or simply disable Addon Hub. Every add-on returns to its own tab.</p></details>
+    <details><summary>Does it need the internet?</summary>
+      <p>No. Addon Hub never connects to the network. It only reads your installed add-ons and writes its own settings file.</p></details>
+  </div>
+</section>
+
+<section id="req">
+  <div class="wrap">
+    <h2><span class="n">12</span>Requirements</h2>
+    <div class="tbl-wrap"><table>
+      <tr><th>Item</th><th>Supported</th></tr>
+      <tr><td>Blender</td><td>4.2 and newer, tested on 4.5 LTS and 5.2</td></tr>
+      <tr><td>Platforms</td><td>Windows, macOS and Linux (pure Python, one zip for all)</td></tr>
+      <tr><td>Works on</td><td>Legacy add-ons and Blender 4.2+ extensions</td></tr>
+      <tr><td>Sidebar</td><td>The 3D Viewport sidebar (N panel)</td></tr>
+      <tr><td>Languages</td><td>English, Türkçe</td></tr>
+      <tr><td>Network</td><td>Not used</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><a href="index.html">Product page</a> · Addon Hub for Blender · GPL-3.0-or-later</div></footer>
+<script src="assets/embed.js"></script>
+</body>
+</html>
